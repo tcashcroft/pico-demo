@@ -8,12 +8,15 @@ ruleset com.tcashcroft.helloworld-app {
   global {
     event_domain = "com_tcashcroft_helloworld_app"
     Hello = function(_headers){
+      url = <<#{meta:host}/sky/event/#{meta:eci}/none/#{event_domain}/given_name>>
       html:header("manage Hellos","",null,null,_headers)
       + <<
 <h1>Manage Hellos</h1>
 <p>
 Hello, #{ent:name.defaultsTo("world")}!
 </p>
+<h2>Technical details</h2>
+<pre>#{url}</pre>
 >>
       + html:footer()
     }
