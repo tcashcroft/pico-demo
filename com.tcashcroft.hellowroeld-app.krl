@@ -11,6 +11,9 @@ ruleset com.tcashcroft.helloworld-app {
       html:header("manage Hellos","",null,null,_headers)
       + <<
 <h1>Manage Hellos</h1>
+<p>
+Hello, #{ent:name}!
+</p>
 >>
       + html:footer()
     }
