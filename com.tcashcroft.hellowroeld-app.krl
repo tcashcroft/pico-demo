@@ -42,10 +42,10 @@ Hello, #{ent:name.defaultsTo("world")}!
 }
 
 rule acceptAndStoreName {
-  select when org_picostack_hello name_given
+  select when com_tcashcroft_helloworld-app given_name
     name re#(.+)# setting(new_val)
   fired {
     end:name := new_val
-    raise org_picostack_hello event "name_saved" attributes event:attrs
+    raise com_tcashcroft_helloworld-app event "name_saved" attributes event:attrs
   }
 }
