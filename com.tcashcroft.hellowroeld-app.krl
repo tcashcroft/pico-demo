@@ -12,7 +12,7 @@ ruleset com.tcashcroft.helloworld-app {
       + <<
 <h1>Manage Hellos</h1>
 <p>
-Hello, #{ent:name}!
+Hello, #{ent:name.defaultsTo("world")}!
 </p>
 >>
       + html:footer()
